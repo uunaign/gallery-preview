@@ -1,0 +1,40 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #ffffff;
+    background: repeating-radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 35%, rgba(255, 251, 0, 0.6) 40%, rgba(255, 251, 0, 0.6) 45%, rgba(255, 255, 255, 1) 51%, rgba(255, 255, 255, 1) 100%);
+}
+
+.main-hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#hero-title {
+    width: 60vw;
+    margin-top: -80px;
+}
+
+#hero-msg {
+    width: 40vw;
+    margin-top: -100px;
+}
+
+@media screen and (max-width: 54.5rem) {
+
+    #hero-title {
+        width: 80vw;
+    }
+
+    #hero-msg {
+        width: 60vw;
+        margin-top: -50px;
+    }
+    
+}
