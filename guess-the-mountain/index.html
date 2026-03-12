@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mountain Quiz // unaign</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="game-container">
+        <nav class="top-nav">
+            <a href="../" class="back-link">
+                <img src="../assets/GALLERYLC.png" alt="Volver">
+            </a>
+        </nav>
+
+        <section id="start-screen" class="screen">
+            <div class="content-wrapper">
+                <span class="badge">ESTACIÓN GEOGRÁFICA</span>
+                <h1>Mountain<br>Quiz.</h1>
+                <p>Identifica las 10 cimas con precisión.</p>
+                <button id="start-btn" class="btn-primary">COMENZAR</button>
+            </div>
+        </section>
+
+        <section id="countdown-screen" class="screen hidden">
+            <div id="countdown-number">3</div>
+        </section>
+
+        <section id="quiz-screen" class="screen hidden">
+            <div class="ui-top">
+                <div class="timer-display" id="timer-val">00:00</div>
+                <div class="counter-display"><span id="current-q">1</span>/10</div>
+            </div>
+            
+            <div class="image-viewport">
+                <img id="mountain-img" src="" alt="">
+            </div>
+            
+            <div id="options-grid"></div>
+        </section>
+
+        <section id="result-screen" class="screen hidden">
+            <div class="result-content">
+                <h2>LOGRO<br>COMPLETADO</h2>
+                <div class="final-stats">
+                    <div class="stat-block">
+                        <label>ACIERTOS</label>
+                        <span id="final-score">0</span>
+                    </div>
+                    <div class="stat-block">
+                        <label>TIEMPO</label>
+                        <span id="final-time">00:00</span>
+                    </div>
+                </div>
+                <div class="actions">
+                    <button id="share-btn" class="btn-primary">COMPARTIR</button>
+                    <button onclick="location.reload()" class="btn-link">REINTENTAR</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
