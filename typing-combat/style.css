@@ -1,0 +1,102 @@
+:root {
+    --neon: #00ff41;
+    --bg: #050a05;
+    --danger: #ff0055;
+    --panel: #001100;
+}
+
+body {
+    background: var(--bg);
+    color: var(--neon);
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#intro-screen, #overlay {
+    position: fixed; inset: 0; background: rgba(0,10,0,0.95);
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    z-index: 1000; text-align: center; padding: 20px;
+}
+
+.intro-content { max-width: 600px; border: 1px solid var(--neon); padding: 40px; box-shadow: 0 0 20px rgba(0,255,65,0.1); }
+
+#game-header {
+    display: flex;
+    align-items: center;
+    background: var(--panel);
+    border-bottom: 1px solid #113311;
+    height: 70px;
+}
+
+.back-btn-container {
+    padding-left: 20px;
+}
+
+.back-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    background: #ffffff;
+    border-radius: 50%;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-decoration: none;
+    overflow: hidden;
+}
+
+.back-btn img {
+    width: 70%;
+    height: auto;
+}
+
+.back-btn:hover {
+    transform: scale(1.1) rotate(-20deg);
+}
+
+#stats {
+    flex-grow: 1;
+    padding: 0 30px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.1rem;
+}
+
+#game-container { width: 100vw; height: 100vh; display: flex; flex-direction: column; }
+
+#terminal-screen { 
+    flex-grow: 1; 
+    position: relative; 
+    width: 100%; 
+    background: linear-gradient(rgba(0,20,0,0.2) 50%, transparent 50%);
+    background-size: 100% 4px; /* Efecto scanline suave */
+}
+
+.word-enemy {
+    position: absolute; font-weight: bold; font-size: 1.5rem;
+    text-shadow: 0 0 10px var(--neon); letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.life-word { color: var(--danger); text-shadow: 0 0 10px var(--danger); }
+
+#input-display {
+    height: 80px; background: #000; display: flex; align-items: center;
+    padding: 0 40px; font-size: 2.2rem; border-top: 1px solid #113311;
+}
+
+.cursor { animation: blink 1s infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+
+.hidden { display: none !important; }
+
+button {
+    background: var(--neon); color: black; border: none; padding: 15px 30px;
+    font-family: inherit; font-weight: bold; cursor: pointer; transition: 0.2s;
+}
+button:hover { background: white; transform: translateY(-2px); }

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Combat // Terminal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="intro-screen">
+        <div class="intro-content">
+            <h1>> PROTOCOLO: TYPING_COMBAT</h1>
+            <p>OBJETIVO: Eliminar los paquetes de datos antes de que toquen el suelo.</p>
+            <ul style="text-align: left; display: inline-block;">
+                <li>Todas las palabras son de <strong>5 LETRAS</strong>.</li>
+                <li>Se envían <strong>automáticamente</strong> al pulsar la 5ª tecla.</li>
+                <li>Si aparece <span style="color: #ff0055;">"VIDA"</span>, escríbela para recuperarte.</li>
+                <li>Escribir mal no quita vida, pero el impacto de un dato sí.</li>
+            </ul>
+            <br>
+            <button onclick="startGame()">INICIAR SECUENCIA</button>
+        </div>
+    </div>
+
+    <div id="game-container" class="hidden">
+        <header id="game-header">
+            <div class="back-btn-container">
+                <a href="https://gallery.unaign.xyz" class="back-btn">
+                    <img src="../assets/GALLERYLC.png" alt="Galería">
+                </a>
+            </div>
+            <div id="stats">
+                <span>PUNTOS: <b id="score">0</b></span>
+                <span>INTEGRIDAD: <b id="lives">5</b>/5</span>
+            </div>
+        </header>
+
+        <div id="terminal-screen"></div>
+
+        <div id="input-display">
+            <span class="prompt">></span><span id="current-typing"></span><span class="cursor">_</span>
+        </div>
+    </div>
+
+    <div id="overlay" class="hidden">
+        <h1>SISTEMA COLAPSADO</h1>
+        <p>Puntuación Final: <span id="final-score">0</span></p>
+        <button onclick="location.reload()">REINTENTAR</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,16 +1,23 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <title>Pixel Studio</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <aside id="sidebar">
+        <div class="back-btn-container">
+            <a href="https://gallery.unaign.xyz" class="back-btn">
+                <img src="../assets/GALLERYLC.png" alt="Galería">
+            </a>
+        </div>
         <div class="sidebar-header">
             <h2>PIXEL STUDIO</h2>
         </div>
-        
+
         <div class="scroll-area">
             <section>
                 <span class="label-group">Geometría</span>
@@ -54,7 +61,7 @@
                         <option value="duotone">Duotono (Bitmap)</option>
                     </select>
                 </div>
-                
+
                 <div id="duotone-controls" class="hidden">
                     <div class="color-row">
                         <input type="color" id="color-dark" value="#000000">
@@ -79,4 +86,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>

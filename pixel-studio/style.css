@@ -62,3 +62,30 @@ canvas { max-width: 90%; max-height: 90%; transform: scaleX(-1); border: 1px sol
     width: 100%; padding: 12px; background: white; border: none; 
     font-weight: bold; cursor: pointer; margin-top: 10px; 
 }
+
+.back-btn-container {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+.back-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    background: #ffffff;
+    border-radius: 50%;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-decoration: none;
+    overflow: hidden;
+}
+
+.back-btn img {
+    width: 70%;
+    height: auto;
+}
+
+.back-btn:hover {
+    transform: scale(1.1) rotate(-20deg);
+}
