@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Life in Blocks</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div id="header-container">
+        <div class="back-btn-container">
+            <a href="../" class="back-btn">
+                <img src="../assets/GALLERYLC.png" alt="Galería">
+            </a>
+        </div>
+        <h1>LIFE IN BLOCKS</h1>
+        <div></div>
+        </div>
+    </header>
+
+    <main>
+        <div id="setup-screen">
+            <p class="intro-text">Cada cuadrado representa una semana de vida.</p>
+            <div id="two-container">
+            <input type="date" id="birth-date">
+            <button id="generate-btn">VISUALIZAR MI TIEMPO</button>
+            </div>
+        </div>
+
+        <div id="life-grid" class="hidden"></div>
+    </main>
+
+    <div id="impact-panel" class="hidden">
+        <section class="stats-grid">
+            <div class="stat-card">
+                <span class="label">HAS CONSUMIDO</span>
+                <span id="weeks-lived" class="value">0</span>
+                <span class="unit">SEMANAS</span>
+            </div>
+            <div class="stat-card">
+                <span class="label">TE QUEDAN*</span>
+                <span id="weeks-left" class="value">0</span>
+                <span class="unit">SEMANAS</span>
+            </div>
+        </section>
+
+        <section class="deep-message">
+            <h2>LA LOTERÍA DEL NACIMIENTO</h2>
+            <p>
+                Tu matriz se calcula sobre una esperanza de vida media en occidente de <strong>82 años</strong>. 
+                Sin embargo, esta cuadrícula es un privilegio geográfico.
+            </p>
+            <div class="comparison-list">
+                <p>En países como <strong>Chad o Nigeria</strong>, la media apenas roza los <strong>53-60 años</strong>; su matriz terminaría casi a la mitad de la tuya.</p>
+                <p>Mientras tú planeas tu próxima década, millones de personas solo pueden planear su próxima semana.</p>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
