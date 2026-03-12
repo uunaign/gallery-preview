@@ -64,18 +64,21 @@ function loadQuestion() {
     const imgElement = document.getElementById('mountain-img');
     
     imgElement.style.opacity = '0';
+    imgElement.src = ''; 
     
-
     const fileName = q.name.toLowerCase().replace(/\s+/g, '-') + ".jpg";
+    const finalPath = `assets/mountains/${fileName}`;
+
+    const tempImg = new Image();
+    tempImg.src = finalPath;
     
-    imgElement.src = `assets/mountains/${fileName}?v=${Date.now()}`;
-    
-    imgElement.onload = () => {
+    tempImg.onload = function() {
+        imgElement.src = finalPath;
         imgElement.style.opacity = '1';
     };
 
-    imgElement.onerror = () => {
-        console.error("Error cargando:", fileName);
+    tempImg.onerror = function() {
+        console.error("No se pudo encontrar: " + finalPath);
     };
 
     document.getElementById('current-q').innerText = currentIdx + 1;
