@@ -85,7 +85,7 @@ textarea {
     resize: none;
     font-family: 'Special Elite', serif;
     font-size: 1.15rem;
-    line-height: 2rem; /* Ajustado para las líneas */
+    line-height: 2rem;
     color: var(--ink);
     background-image: linear-gradient(#e1ddd3 1px, transparent 1px);
     background-size: 100% 2rem;

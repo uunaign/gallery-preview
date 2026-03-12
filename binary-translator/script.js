@@ -11,7 +11,6 @@ textInput.addEventListener('input', () => {
 
 // Traducción de Binario a Texto
 binaryInput.addEventListener('input', (e) => {
-    // Permitir solo 0, 1 y espacios
     const cursorPosition = e.target.selectionStart;
     const originalValue = binaryInput.value;
     const cleanValue = originalValue.replace(/[^01\s]/g, '');
@@ -25,13 +24,12 @@ binaryInput.addEventListener('input', (e) => {
     let decodedText = "";
 
     binaryArray.forEach(bin => {
-        if (bin.length === 8) { // Solo traduce cuando el bloque está completo
+        if (bin.length === 8) {
             const charCode = parseInt(bin, 2);
             if (!isNaN(charCode)) {
                 decodedText += String.fromCharCode(charCode);
             }
         } else if (bin.length > 8) {
-            // Manejo por si pegan texto sin espacios
             for (let i = 0; i < bin.length; i += 8) {
                 const chunk = bin.slice(i, i + 8);
                 if (chunk.length === 8) {
