@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS battle</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo-area">
+            <h1>CSS BATTLE</h1>
+            <button id="btn-menu">Niveles</button>
+        </div>
+        <div id="level-indicator">--/--</div>
+    </header>
+
+    <div id="level-menu" class="menu-hidden">
+        <div class="menu-content">
+            <div class="menu-header">
+                <h2>Explorador de Retos</h2>
+                <button id="close-menu">&times;</button>
+            </div>
+            <div id="level-grid"></div>
+        </div>
+    </div>
+
+    <main class="game-container">
+        <section class="panel editor-panel">
+            <h2 id="level-title">Cargando...</h2>
+            <div id="target-info">Esperando datos de la misión...</div>
+            <p id="hint">Analizando el objetivo...</p>
+            <div class="editor-wrapper">
+                <div id="textarea-mirror"></div>
+                <textarea id="editor" spellcheck="false"></textarea>
+                <div id="suggestions" class="suggestions-hidden"></div>
+            </div>
+            <div class="actions">
+                <button id="btn-validate" class="primary">Siguiente Desafío</button>
+                <button id="btn-reset" class="secondary">Reiniciar Nivel</button>
+            </div>
+        </section>
+
+        <section class="panel visual-panel">
+            <div class="preview-box">
+                <label>MODELO OBJETIVO</label>
+                <div class="render-area"><div id="target-element"></div></div>
+            </div>
+            <div class="preview-box">
+                <label>TU SIMULACIÓN</label>
+                <div class="render-area">
+                    <style id="dynamic-style"></style>
+                    <div id="user-element" class="user-el"></div>
+                </div>
+            </div>
+            <div id="feedback">COINCIDENCIA: 0%</div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
