@@ -4,15 +4,16 @@ const wordList = [
     "VISTA", "DOTES", "METRO", "RADIO", "ZORRO", "ACERO", "AGUAS", "ALMAS", "ANTES", "APOYO", 
     "BAILE", "BANCO", "BEBER", "BICHO", "BOLSA", "BOTON", "BRISA", "BRUJO", "CABLE", "CALLE", 
     "CAMPO", "CANAL", "CARRO", "CLAVE", "COCHE", "COSER", "CRUCE", "DATOS", "DICHO", "DIETA", 
-    "DISCO", "DONDE", "DRAMA", "ERROR", "ETAPA", "EXITO", "FERIA", "FICHA", "FORMA", 
-    "FRASE", "FRUTA", "GANAR", "GLOBO", "GOLPE", "GRITO", "GRUPO", "HABLA", "HIELO", "HUEVO", 
-    "ICONO", "IDEAL", "ISLAS", "JABON", "JUEGO", "JUNTO", "LAPIZ", "LARGO", "LENTE", "LISTA", 
+    "DISCO", "DONDE", "DRAMA", "ERROR", "ETAPA", "EXITO", "FERIA", "FICHA", "FORMA", "FRASE", 
+    "FRUTA", "GANAR", "GLOBO", "GOLPE", "GRITO", "GRUPO", "HABLA", "HIELO", "HUEVO", "ICONO", 
+    "IDEAL", "ISLAS", "JABON", "JUEGO", "JUNTO", "LAPIZ", "LARGO", "LENTE", "LISTA", "VUELO",
     "LLAVE", "LOCAL", "LUCES", "LUGAR", "MAGIA", "MAPAS", "MARCO", "MEDIA", "METAL", "MOTOR", 
-    "NARIZ", "NIVEL", "NOTAS", "NUEVO", "ORDEN", "PANEL", "PARTE", "PEDIR", "PERRO", "PESO", 
-    "PISTA", "PODER", "PRADO", "PUNTO", "RAMAS", "RATON", "RAYOS", "REGLA", "RIVAL", "ROBOT", 
+    "NARIZ", "NIVEL", "NOTAS", "NUEVO", "ORDEN", "PANEL", "PARTE", "PEDIR", "PERRO", "PISTA", 
+    "PODER", "PRADO", "PUNTO", "RAMAS", "RATON", "RAYOS", "REGLA", "RIVAL", "ROBOT", "VALLE", 
     "ROCAS", "RUEDA", "SABER", "SELVA", "SERIE", "SIGLO", "SITIO", "SOLAR", "SUELO", "TABLA", 
-    "TARDE", "TECLA", "TEXTO", "TIRAR", "TORRE", "TRAMA", "TRENES", "TRUCO", "VALLE", "VUELO"
+    "TARDE", "TECLA", "TEXTO", "TIRAR", "TORRE", "TRAMA", "TRUCO"
 ];
+
 let score = 0;
 let lives = 5;
 let currentInput = "";
