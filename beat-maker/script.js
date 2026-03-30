@@ -10,6 +10,47 @@ const pianoNotes = [261.63, 329.63, 392.00, 440.00];
 const totalTracks = drumTracks.length + pianoNotes.length;
 const gridState = Array(totalTracks).fill().map(() => Array(16).fill(false));
 
+function saveStateToURL() {
+    const bpm = parseInt(document.getElementById('bpm-input').value) || 120;
+    let binStr = bpm.toString(2).padStart(8, '0');
+    
+    for (let t = 0; t < totalTracks; t++) {
+        for (let s = 0; s < 16; s++) {
+            binStr += gridState[t][s] ? '1' : '0';
+        }
+    }
+    
+    const hex = BigInt('0b' + binStr).toString(16);
+    window.history.replaceState(null, null, '?b=' + hex);
+}
+
+function loadStateFromURL() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const b = urlParams.get('b') || window.location.hash.slice(1);
+    
+    if (b) {
+        try {
+            const hex = b.replace(/[^0-9a-fA-F]/g, '');
+            const binStr = BigInt('0x' + hex).toString(2).padStart(136, '0');
+            const bpm = parseInt(binStr.slice(0, 8), 2);
+            document.getElementById('bpm-input').value = bpm;
+            
+            let charIdx = 8;
+            for (let t = 0; t < totalTracks; t++) {
+                for (let s = 0; s < 16; s++) {
+                    gridState[t][s] = binStr[charIdx] === '1';
+                    charIdx++;
+                }
+            }
+        } catch (e) {
+            console.error('Failed to parse state:', e);
+        }
+    }
+}
+
+loadStateFromURL();
+document.getElementById('bpm-input').addEventListener('input', saveStateToURL);
+
 function playSound(tIdx, time) {
     const gain = audioCtx.createGain();
     const osc = audioCtx.createOscillator();
@@ -60,6 +101,7 @@ allTrackNames.forEach((name, tIdx) => {
     for (let sIdx = 0; sIdx < 16; sIdx++) {
         const step = document.createElement('div');
         step.className = 'step';
+        if (gridState[tIdx][sIdx]) step.classList.add('active');
         step.dataset.step = sIdx;
         step.addEventListener('pointerdown', (e) => {
             e.preventDefault();
@@ -69,6 +111,7 @@ allTrackNames.forEach((name, tIdx) => {
                 if (audioCtx.state === 'suspended') audioCtx.resume();
                 playSound(tIdx, audioCtx.currentTime);
             }
+            saveStateToURL();
         });
         stepsDiv.appendChild(step);
     }
@@ -110,4 +153,14 @@ document.getElementById('play-btn').onclick = function() {
 document.getElementById('clear-btn').onclick = () => {
     gridState.forEach(row => row.fill(false));
     document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+    saveStateToURL();
+};
+
+document.getElementById('share-btn').onclick = () => {
+    saveStateToURL();
+    navigator.clipboard.writeText(window.location.href);
+    const btn = document.getElementById('share-btn');
+    const originalText = btn.innerText;
+    btn.innerText = 'COPIED!';
+    setTimeout(() => { btn.innerText = originalText; }, 2000);
 };
